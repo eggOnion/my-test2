@@ -1,6 +1,6 @@
 # My Calculator App using React
 
-This project was built for my Cousera's assignment - React Basics with Meta. Sharing some of my learnings, as well as the scope of this project.
+This project was built for my Cousera's assignment - React Basics with Meta. Here are some of my learnings, as well as the scope of this project.
 
 ---
 
@@ -44,12 +44,16 @@ to props are done using functions such as; callback functions or event handlers.
 
 ## In this Calculator App;
 
-* The data are being passed from parent to child component using props(setResult, result, inputRef)
-* useState and useRef hooks were used.
-* Callback functions & Event handlers were used.
-
+The scope of the app is to build 6 functions;
+* 4 functions on add, subtract, multiply & divide.
+* 2 functions on reset input & reset result.
+  * The reset input function reset the input field to value 0.
+  * The reset result function reset the result field to value 0.
 
 ## Calculator Componenet (Parent)
+
+>The data are being passed from parent to child component using props(setResult, result, inputRef)
+>useState and useRef hooks were used.
 
 ### Syntax of useState:
 
@@ -64,7 +68,6 @@ to props are done using functions such as; callback functions or event handlers.
 ```const inputRef = useRef(null);```<br>
 ```const resultRef = useRef(null);```
 
-
 * inputRef: This will be used to reference the input field where the user types a number.
 * resultRef: This will be used to reference the paragraph that displays the result.
 
@@ -74,6 +77,8 @@ a button is clicked. Both actions are execute without having to re-render the en
 ---
 
 ## Addition Component (Child)
+
+>Callback functions & Event handlers were used.
 
 It recevied the data from the Calculator Component(Parent) and apply the business logic.
 
