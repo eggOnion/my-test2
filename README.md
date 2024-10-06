@@ -54,16 +54,20 @@ to props are done using functions such as; callback functions or event handlers.
   * The reset result function reset the result field to value 0.
 
 ## Checking on Edge Cases
->Anything that divides by 0 leads to either infinity or undefined, thus it should be prevented.
+>Anything that divides by 0 leads to either infinity or undefined, thus it must be prevented.
 
-~[calDivby0Code](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCases.png?raw=true)
-~[calDivby0UI](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCase_Division.png?raw=true)
+![calDivby0Code](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCases.png?raw=true)
+![calDivby0UI](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCase_Division.png?raw=true)
+
 
 ## The Folder Structure 
+The code was structured into 7 components, each having its own functionalities. This makes the codes cleaner and 
+easier to manage in the future.
+
 ![folderStructure](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_folderStructure.png?raw=true)
 
-## Calculator Componenet (Parent)
 
+## Calculator Componenet (Parent)
 >The data are being passed from parent to child component using props(setResult, result, inputRef).
 >The useState and useRef hooks are also used here.
 
@@ -99,7 +103,6 @@ This component accepts 3 props (setResult, result, inputRef) from its parent.
 * setResult: A function that updates the result state.
 * result: The current result value (though it's not used within this component).
 * inputRef: A reference to an input element, which allows the component to access the input's current value.
-
 
 ## Event Handler function
 ```function plus(e){}``` This is an event handler named plus that gets called when the button is clicked.
