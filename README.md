@@ -9,12 +9,10 @@ This project was built for my Cousera's assignment - React Basics with Meta. Sha
 * Class Component
 * Functional Component
 
-### Class Component
----
+## Class Component
 Before React 16.8, class component were the standard way of defining components. They are still used in some legacy codebases and for certain complex use cases.
 
-### Functional components
----
+## Functional components
 Fast forward, functional component was introduced and enhance further with the help of React hooks in React 16.8, Feb 2019. Today, it is widely used in most of the modern web application.
 
 ---
@@ -63,7 +61,7 @@ to props are done using functions such as; callback functions or event handlers.
 
 ### Syntax of useRef:
 
-```const inputRef = useRef(null);```
+```const inputRef = useRef(null);```<br>
 ```const resultRef = useRef(null);```
 
 
