@@ -1,70 +1,99 @@
-# Getting Started with Create React App
+# My Calculator App using React
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was built for my Cousera's assignment - React Basics with Meta. Sharing some of my learnings, as well as the scope of this project.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+## 2 types of Components in React. 
 
-### `npm start`
+* Class Component
+* Functional Component
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### Class Component
+Before React 16.8, class component were the standard way of defining components. They are still used in some legacy codebases and for certain complex use cases.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+### Functional components
+Fast forward, functional component was introduced and enhance further with the help of React hooks in React 16.8, Feb 2019. Today, it is widely used in most of the modern web application.
 
-### `npm test`
+---
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## React Hooks
 
-### `npm run build`
+#### Some of the hooks are:
+* useState
+* useRef
+* useEffect
+* useContext
+* useReducer
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## What is Hook?
+Hooks are special function in React that allow you to handle and manage state inside a function componenet.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## What is State?
+State are like variables that holds/stores a data or value within the componenet itself. These data or values are dynamic, they can mutable over 
+the time. When the State changes, the component will auto update and re-render to reflect the changes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## What is Prop?
+Props are data recevied from the parent component who are the one managing and handling the state. These 
+props are immuatable, read-only & cannot be modifiy directly. Meaning, we don't "hard-code" value directly inside them. 
 
-### `npm run eject`
+The Child Componenet use this data (props) to perform business logics and renders the UI. Any modification 
+to props are done using functions such as; callback functions or event handlers.
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+---
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## In this Calculator App;
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+* The data are being passed from parent to child component using props(setResult, result, inputRef)
+* useState and useRef hooks were used.
+* Callback functions & Event handlers were used.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
 
-## Learn More
+## Calculator Componenet (Parent)
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+### Syntax of useState:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```const [result, setResult] = useState(0);```
 
-### Code Splitting
+* result: The variable that holds the data.
+* setResult: The method/function that mutates that data.
+* useState: The hook that initialize the data at the beginning.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Syntax of useRef:
 
-### Analyzing the Bundle Size
+```const inputRef = useRef(null);```
+```const resultRef = useRef(null);```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+* inputRef: This will be used to reference the input field where the user types a number.
+* resultRef: This will be used to reference the paragraph that displays the result.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+>The useRef hook allow the app to focus on the input field when user type a number, or focus on the result field when 
+a button is clicked. Both actions are execute without having to re-render the entire page, making it easier to reference the DOM elements directly.
 
-### Advanced Configuration
+---
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Addition Component (Child)
 
-### Deployment
+It recevied the data from the Calculator Component(Parent) and apply the business logic.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+This component accepts 3 props (setResult, result, inputRef) from its parent.
 
-### `npm run build` fails to minify
+* setResult: A function that updates the result state.
+* result: The current result value (though it's not used within this component).
+* inputRef: A reference to an input element, which allows the component to access the input's current value.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
+
+Function: This is an event handler named plus that gets called when the button is clicked.
+
+Prevent Default Behavior: 
+e.preventDefault() is called to prevent the default form submission behavior (Eg; button is pressed).
+
+e: It refers to the event object that is passed to an event handler (like a click, form submission, or key press)
+preventDefault(): A method available on the event object that prevents the default behavior associated with the event from occurring. Eg; rendering/refreshing the webpage
+
+
+Updating Result (callback function)
+setResult((result) => result + Number(inputRef.current.value)): This updates the result state. It takes the current value of result, converts the value from the inputRef to a number using Number(), and adds it to the current result.
