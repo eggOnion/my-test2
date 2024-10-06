@@ -42,7 +42,7 @@ to props are done using functions such as; callback functions or event handlers.
 
 ---
 
-## In this Calculator App;
+## In this Calculator App
 
 The scope of the app is to build 6 functions;
 * 4 functions on add, subtract, multiply & divide.
@@ -52,8 +52,8 @@ The scope of the app is to build 6 functions;
 
 ## Calculator Componenet (Parent)
 
->The data are being passed from parent to child component using props(setResult, result, inputRef)
->useState and useRef hooks were used.
+>The data are being passed from parent to child component using props(setResult, result, inputRef).
+>The useState and useRef hooks were also used.
 
 ### Syntax of useState:
 
@@ -89,16 +89,13 @@ This component accepts 3 props (setResult, result, inputRef) from its parent.
 * inputRef: A reference to an input element, which allows the component to access the input's current value.
 
 
+## Event Handler function
+```function plus(e){}``` This is an event handler named plus that gets called when the button is clicked.
 
+## Prevent Default Behavior
+```e.preventDefault()``` is called to prevent the default form submission behavior (Eg; when button is pressed it prevent rendering/refreshing the webpage)
+The ```e.``` refers to the event object that is passed to an event handler (like a click, form submission, or key press)
 
-Function: This is an event handler named plus that gets called when the button is clicked.
-
-Prevent Default Behavior: 
-e.preventDefault() is called to prevent the default form submission behavior (Eg; button is pressed).
-
-e: It refers to the event object that is passed to an event handler (like a click, form submission, or key press)
-preventDefault(): A method available on the event object that prevents the default behavior associated with the event from occurring. Eg; rendering/refreshing the webpage
-
-
-Updating Result (callback function)
-setResult((result) => result + Number(inputRef.current.value)): This updates the result state. It takes the current value of result, converts the value from the inputRef to a number using Number(), and adds it to the current result.
+## Callback Function (updating the result in parent)
+```setResult((result) => result + Number(inputRef.current.value))``` This updates the result state. 
+It takes the current value of result, converts the value from the inputRef to a number using Number(), and adds it to the current result.
