@@ -44,11 +44,23 @@ to props are done using functions such as; callback functions or event handlers.
 
 ## In this Calculator App
 
-The scope of the app is to build 6 functions;
+![calculatorApp](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/Calculator.png?raw=true)
+![calculatorInputField](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_inputField.png?raw=true)
+
+## The scope of the app is to build 6 functions;
 * 4 functions on add, subtract, multiply & divide.
 * 2 functions on reset input & reset result.
   * The reset input function reset the input field to value 0.
   * The reset result function reset the result field to value 0.
+
+## Checking on Edge Cases
+>Anything that divides by 0 leads to either infinity or undefined, thus it should be prevented.
+
+~[calDivby0Code](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCases.png?raw=true)
+~[calDivby0UI](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCase_Division.png?raw=true)
+
+## The Folder Structure 
+![folderStructure](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_folderStructure.png?raw=true)
 
 ## Calculator Componenet (Parent)
 
