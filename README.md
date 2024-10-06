@@ -10,9 +10,11 @@ This project was built for my Cousera's assignment - React Basics with Meta. Sha
 * Functional Component
 
 ### Class Component
+
 Before React 16.8, class component were the standard way of defining components. They are still used in some legacy codebases and for certain complex use cases.
 
 ### Functional components
+
 Fast forward, functional component was introduced and enhance further with the help of React hooks in React 16.8, Feb 2019. Today, it is widely used in most of the modern web application.
 
 ---
