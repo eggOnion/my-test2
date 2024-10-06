@@ -10,7 +10,7 @@ This project was built for my Cousera's assignment - React Basics with Meta. Her
 * Functional Component
 
 ## Class Component
-Before React 16.8, class component were the standard way of defining components. They are still used in some legacy codebases and for certain complex use cases.
+Before React 16.8, class component are the standard way of defining components. They are still used in some legacy codebases and for certain complex use cases.
 
 ## Functional components
 Fast forward, functional component was introduced and enhance further with the help of React hooks in React 16.8, Feb 2019. Today, it is widely used in most of the modern web application.
@@ -53,7 +53,7 @@ The scope of the app is to build 6 functions;
 ## Calculator Componenet (Parent)
 
 >The data are being passed from parent to child component using props(setResult, result, inputRef).
->The useState and useRef hooks were also used.
+>The useState and useRef hooks are also used here.
 
 ### Syntax of useState:
 
@@ -78,7 +78,7 @@ a button is clicked. Both actions are execute without having to re-render the en
 
 ## Addition Component (Child)
 
->Callback functions & Event handlers were used.
+>Callback functions & Event handlers are being used here.
 
 It recevied the data from the Calculator Component(Parent) and apply the business logic.
 
