@@ -1,6 +1,8 @@
 # My Calculator App using React
 
 This project was built for my Cousera's assignment - React Basics with Meta. Here are some of my learnings, as well as the scope of this project.
+<br>
+<br>https://eggonion.github.io/myCalculator/
 
 ---
 
