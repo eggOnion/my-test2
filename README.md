@@ -197,7 +197,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 ***scrollDirection*** is the state that tracks the current scroll direction (up or down).
 
 **prevScrollY** using the previous value as a reference to compare against the current scroll position using ***window.scrollY***, a property in the Js DOM.
-
+<br />
 
 ### handleScroll Function
 * As mentioned earlier, this function takes in the value of the current scroll position and compared it against the previous scroll position.
@@ -207,7 +207,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 * The final scroll position, regardless of the direction (up or down) will then be stored.
 
 * The whole process repeats itself when user began scrolling again.
-
+<br />
 
 ### useEffect & Event Listner 
 
