@@ -14,7 +14,7 @@ This project was built for my Coursera's assignment - React Advance with Meta. H
 - chakra-ui/react package
 - FontAwesome
 
-## JavaScript Map Function
+### JavaScript Map Function
 In any programming languages, data structures and algorithms are fundamental concepts used to store, organize, and manipulate data efficiently.
 
 * Maps are often used when you need to maintain an association between keys and values.
@@ -23,7 +23,6 @@ In any programming languages, data structures and algorithms are fundamental con
 
 
 ## Header Component
-
 This component is responsible for:
 
 * The **icons (emails, github, linkedin, medium & stackoverflow)** on the top panel
@@ -34,9 +33,9 @@ This component is responsible for:
 * Hiding or Revealing the header when scrolling down or up.
 
 * Providing the scrolling movements to the **Projects** or **Contact Me** section when clicked.
+<br />
 
-
-#### The Icons
+### The Icons
 First, We declare an array of objects to store the icons & urls.
 
 ```
@@ -93,7 +92,7 @@ The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
 ---
 
-#### The Urls
+### The Urls
 
 The ***handleClick*** function perform scrolling movement to the corresponding section, inside the webpage when either the ***Projects*** or ***Contact Me*** link is clicked.
 ```
@@ -155,7 +154,7 @@ Here, we passed in the String argument **projects** or **contactme** to the ***h
 
 ---
 
-#### Hiding & Revealing the Header when scrolling up or down
+### Hiding & Revealing the Header when scrolling up or down
 This portion of the code handles the hiding/revealing of the header panel on the webpage. 
 
 ```
@@ -193,7 +192,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
   }, [scrollDirection]);
 ```
 
-##### Hooks
+#### Hooks
 * ***useState*** stores a String of the scrollDirection either "up" or "down".
 * ***useRef*** stores the value of the previous scroll position (Y-axis).
 * ***useEffect*** runs everytime when the scroll direction changes.
@@ -202,7 +201,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 **prevScrollY** using the previous value as a reference to compare against the current scroll position using ***window.scrollY***, a property in the Js DOM.
 
-##### handleScroll Function
+#### handleScroll Function
 * As mentioned earlier, this function takes in the value of the current scroll position and compared it against the previous scroll position.
 
 * If the value of the current scroll is bigger, it means that the webpage is being scrolled down. 
@@ -211,7 +210,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 * The whole process repeats itself when user began scrolling again.
 
-##### useEffect & Event Listner 
+#### useEffect & Event Listner 
 
 * The first ***useEffect*** adds an ***Event Listner*** to the scroll event. 
 
@@ -221,7 +220,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 ---
 
-#### How it works?
+### How it works?
 
 * The ***handleScroll*** function is triggered everytime a user scrolls. It compares the value of ***prevScrollY*** against ***currentScrollY*** to determine the direction of the scroll (up or down).
 
@@ -231,7 +230,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 ---
 
-## LandingSection Component
+### LandingSection Component
 This section renders the greeting and bio-info of the person on the webpage.
 
 * Three variables declared are ***greeting***, ***bio1*** & ***bio2***.
@@ -255,7 +254,7 @@ This section of the webpage consists of multiple components working together.
 
 The ***ProjectsSection*** is the parent to both the child; ***FullScreenSection*** & ***Cards***
 
-## ProjectsSection Component
+### ProjectsSection Component
 It consists of an array of objects storing all the projects on this webpage.
 * The ***projects*** array stores all the projects as an object.
 
@@ -264,12 +263,12 @@ It consists of an array of objects storing all the projects on this webpage.
 * Next, we set the CSS layout of this section by passing of props to its child, ***FullScreenSection***.
 > The Cards Component also play a part in the CSS styling. We will come to that later.
 
-## Cards Component
+### Cards Component
 * Received the props that were passed down from its parent component, ***ProjectsSection***.
 
 * Rendered the props using the ***Box***, ***Image***, ***Heading***, and ***Text*** components from ***chakra-ui/react*** to better manage the layout and styles.
 
-## FullScreenSection Component
+### FullScreenSection Component
 * Manage the height & width of each section using the ***VStack*** components from ***chakra-ui/react***.
 
 
@@ -295,7 +294,7 @@ It consists of an array of objects storing all the projects on this webpage.
 <br />https://www.npmjs.com/package/yup
 
 * formik
-https://www.npmjs.com/package/formik
+<br />https://www.npmjs.com/package/formik
 
 * Map function
 <br />https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
