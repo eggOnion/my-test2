@@ -36,7 +36,7 @@ This component is responsible for:
 * Providing the scrolling movements to the **Projects** or **Contact Me** section when clicked.
 
 ## The Icons
-First, We declare an array of objects to store the icons & urls.
+First, We declare an array of objects to store the icons & urls as an object.
 
 ```
 const socials = [
@@ -65,7 +65,7 @@ const socials = [
 
 ---
 
-By using the **Map** function, we can easily retrieve the data again.
+By using the **Map** function, we can easily retrieve the data using the dot notation.
 ```
 <nav>
   {/* Add social media links based on the `socials` data */}
@@ -83,10 +83,8 @@ By using the **Map** function, we can easily retrieve the data again.
     </HStack>
 </nav>
 ```
-In the console log, this is how the data are stored:
+This is how the data are stored:
 <insert image>
-
-> The data can then be retrieve easily using the dot notation. Eg; ***social.url*** & ***social.icon***
 
 > The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
@@ -94,7 +92,7 @@ In the console log, this is how the data are stored:
 
 ## The Urls
 
-The ***handleClick*** function perform scrolling movement to the corresponding section, inside the webpage when either the ***Projects*** or ***Contact Me*** link is clicked.
+The ***handleClick*** function perform scrolling movement to the corresponding section inside the webpage when either the ***Projects*** or ***Contact Me*** link is clicked.
 ```
 const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
@@ -218,6 +216,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 * The second ***useEffect*** runs when the ***scrollDirection*** changes. The ***headerRef.current.style.transform*** directly manipulate the CSS style, hiding/revealing the header.
 
+---
 
 ## How the Header Component works?
 
