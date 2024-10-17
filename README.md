@@ -197,6 +197,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 ***scrollDirection*** is the state that tracks the current scroll direction (up or down).
 
 **prevScrollY** using the previous value as a reference to compare against the current scroll position using ***window.scrollY***, a property in the Js DOM.
+
 <br />
 
 ### handleScroll Function
@@ -217,9 +218,8 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 * The second ***useEffect*** runs when the ***scrollDirection*** changes. The ***headerRef.current.style.transform*** directly manipulate the CSS style, hiding/revealing the header.
 
----
 
-## How it works?
+## How the Header Component works?
 
 * The ***handleScroll*** function is triggered everytime a user scrolls. It compares the value of ***prevScrollY*** against ***currentScrollY*** to determine the direction of the scroll (up or down).
 
