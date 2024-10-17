@@ -1,118 +1,301 @@
-# My Calculator App using React
+# My Portfolio Webpage using React
 
-This project was built for my Cousera's assignment - React Basics with Meta. Here are some of my learnings, as well as the scope of this project.
-<br>
-<br>https://eggonion.github.io/myCalculator/
-
----
-
-## 2 types of Components in React. 
-
-* Class Component
-* Functional Component
-
-## Class Component
-Before React 16.8, class component are the standard way of defining components. They are still used in some legacy codebases and for certain complex use cases.
-
-## Functional components
-Fast forward, functional component was introduced and enhance further with the help of React hooks in React 16.8, Feb 2019. Today, it is widely used in most of the modern web application.
+This project was built for my Coursera's assignment - React Advance with Meta. Here are some of my learnings, as well as the scope of this project.
+<br />
+\*\*{Update new Url}
 
 ---
 
-## React Hooks
+## The "things" used in the project:
 
-#### Some of the hooks are:
-* useState
-* useRef
-* useEffect
-* useContext
-* useReducer
+- JavaScript map function
+- useRef, useEffct, useState, useContext hooks
+- Custom hooks - useSubmit
+- chakra-ui/react package
+- FontAwesome
 
-## What is Hook?
-Hooks are special function in React that allow you to handle and manage state inside a function componenet.
+## JavaScript Map Function
+In any programming languages, data structures and algorithms are fundamental concepts used to store, organize, and manipulate data efficiently.
 
-## What is State?
-State are like variables that holds/stores a data or value within the componenet itself. These data or values are dynamic, they can mutable over 
-the time. When the State changes, the component will auto update and re-render to reflect the changes.
+* Maps are often used when you need to maintain an association between keys and values.
 
-## What is Prop?
-Props are data recevied from the parent component who are the one managing and handling the state. These 
-props are immuatable, read-only & cannot be modifiy directly. Meaning, we don't "hard-code" value directly inside them. 
-
-The Child Componenet use this data (props) to perform business logics and renders the UI. Any modification 
-to props are done using functions such as; callback functions or event handlers.
-
----
-
-## In this Calculator App
-
-![calculatorApp](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/Calculator.png?raw=true)
-![calculatorInputField](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_inputField.png?raw=true)
-
-## The scope of the app is to build 6 functions;
-* 4 functions on add, subtract, multiply & divide.
-* 2 functions on reset input & reset result.
-  * The reset input function reset the input field to value 0.
-  * The reset result function reset the result field to value 0.
-
-## Checking on Edge Cases
->Anything that divides by 0 leads to either infinity or undefined, thus it must be prevented.
-
-![calDivby0Code](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCases.png?raw=true)
-![calDivby0UI](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_edgeCase_Division.png?raw=true)
+* A function to execute for each element in the array. Its return value is a copied version of the original version. Any chages to this copied will not affect the origin.
 
 
-## The Folder Structure 
-The code was structured into 7 components, each having its own functionalities. This makes the codes cleaner and 
-easier to manage in the future.
+## Header Component
 
-![folderStructure](https://github.com/eggOnion/my-test2/blob/main/assestsForReadMe/cal_folderStructure.png?raw=true)
+This component is responsible for:
+
+* The **icons (emails, github, linkedin, medium & stackoverflow)** on the top panel
+  of the webpage.
+
+* The **Projects** and **Contact Me** Url
+
+* Hiding or Revealing the header when scrolling down or up.
+
+* Providing the scrolling movements to the **Projects** or **Contact Me** section when clicked.
 
 
-## Calculator Componenet (Parent)
->The data are being passed from parent to child component using props(setResult, result, inputRef).
->The useState and useRef hooks are also used here.
+#### The Icons
+First, We declare an array of objects to store the icons & urls.
 
-### Syntax of useState:
-
-```const [result, setResult] = useState(0);```
-
-* result: The variable that holds the data.
-* setResult: The method/function that mutates that data.
-* useState: The hook that initialize the data at the beginning.
-
-### Syntax of useRef:
-
-```const inputRef = useRef(null);```<br>
-```const resultRef = useRef(null);```
-
-* inputRef: This will be used to reference the input field where the user types a number.
-* resultRef: This will be used to reference the paragraph that displays the result.
-
->The useRef hook allow the app to focus on the input field when user type a number, or focus on the result field when 
-a button is clicked. Both actions are execute without having to re-render the entire page, making it easier to reference the DOM elements directly.
+```
+const socials = [
+  {
+    icon: faEnvelope,
+    url: "mailto: hello@example.com",
+  },
+  {
+    icon: faGithub,
+    url: "https://github.com",
+  },
+  {
+    icon: faLinkedin,
+    url: "https://www.linkedin.com",
+  },
+  {
+    icon: faMedium,
+    url: "https://medium.com",
+  },
+  {
+    icon: faStackOverflow,
+    url: "https://stackoverflow.com",
+  },
+];
+```
 
 ---
 
-## Addition Component (Child)
+By using the **Map** function, we can easily retrieve the data again.
+```
+<nav>
+  {/* Add social media links based on the `socials` data */}
+    <HStack spacing="24px">
+      {socials.map((social, index) => (
+        <a
+          href={social.url}
+          key={index}
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <FontAwesomeIcon icon={social.icon} size="2x" />
+        </a>
+      ))}
+    </HStack>
+</nav>
+```
+In the console log, this is how the data are stored:
+<insert image>
 
->Callback functions & Event handlers are being used here.
+The data can then be retrieve easily using the dot notation. Eg; ***social.url*** & ***social.icon***
 
-It recevied the data from the Calculator Component(Parent) and apply the business logic.
+The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
-This component accepts 3 props (setResult, result, inputRef) from its parent.
+---
 
-* setResult: A function that updates the result state.
-* result: The current result value (though it's not used within this component).
-* inputRef: A reference to an input element, which allows the component to access the input's current value.
+#### The Urls
 
-## Event Handler function
-```function plus(e){}``` This is an event handler named plus that gets called when the button is clicked.
+The ***handleClick*** function perform scrolling movement to the corresponding section, inside the webpage when either the ***Projects*** or ***Contact Me*** link is clicked.
+```
+const handleClick = (anchor) => () => {
+    const id = `${anchor}-section`;
+    const element = document.getElementById(id);
+    const offset = 100;
 
-## Prevent Default Behavior
-```e.preventDefault()``` is called to prevent the default form submission behavior (Eg; when button is pressed it prevent rendering/refreshing the webpage)
-The ```e.``` refers to the event object that is passed to an event handler (like a click, form submission, or key press)
+    if (element) {
+      const elementPosition =
+        element.getBoundingClientRect().top + window.pageYOffset;
+      const offsetPosition = elementPosition - offset;
 
-## Callback Function (updating the result in parent)
-```setResult((result) => result + Number(inputRef.current.value))``` This updates the result state. 
-It takes the current value of result, converts the value from the inputRef to a number using Number(), and adds it to the current result.
+      window.scrollTo({
+        top: offsetPosition,
+        behavior: "smooth",
+        block: "start",
+      });
+    }
+  };
+  ```
+
+The ***handleClick*** function takes in a anonymous function and a parameter name ***anchor*** which serve as an identifier later when searching for the corresponding sections. 
+
+The **element** variables checks if the id exist using the **document.getElementById(id)** method to interact with the DOM. The id will be stored it it exists, else it will be null.
+
+The **offset** variable adjust the pixels of 100 for precision so that the corresponding section can be reached.
+
+The **if (element)** condition will be execute if the id exisits. Meaning, when someone clicks the url. The members inside will provide the scrolling motion to the corresponding section of the webpage.
+<br />
+
+---
+
+Rendering of the ***Projects*** & ***Contact Me*** urls are below.
+```
+<nav>
+  <HStack spacing="24px">
+    {/* Add links to Projects and Contact me section */}
+    <
+      href="#projects"
+      onClick={handleClick("projects")}
+      key="projects-link"
+    >
+      Projects
+    
+    {/* Link to the Contact Me section */}
+    <a
+      href="#contact-me"
+      onClick={handleClick("contactme")}
+      key="contactme-link"
+    >
+      Contact Me
+    </a>
+  </HStack>
+</nav>
+```
+
+Here, we passed in the String argument **projects** or **contactme** to the ***handleClick function*** which controls the ***onClick evenHandler***. The String will be passed to the **anchor** parameter as mentioned previously.
+
+---
+
+#### Hiding & Revealing the Header when scrolling up or down
+This portion of the code handles the hiding/revealing of the header panel on the webpage. 
+
+```
+ const [scrollDirection, setScrollDirection] = useState("up");
+  const prevScrollY = useRef(0);
+  const headerRef = useRef(null);
+
+  const handleScroll = () => {
+    const currentScrollY = window.scrollY;
+
+    if (currentScrollY > prevScrollY.current) {
+      // Scrolling down
+      setScrollDirection("down");
+    } else {
+      // Scrolling up
+      setScrollDirection("up");
+    }
+
+    prevScrollY.current = currentScrollY;
+  };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
+
+  useEffect(() => {
+    if (headerRef.current) {
+      headerRef.current.style.transform =
+        scrollDirection === "down" ? "translateY(-200px)" : "translateY(0)";
+    }
+  }, [scrollDirection]);
+```
+
+##### Hooks
+* ***useState*** stores a String of the scrollDirection either "up" or "down".
+* ***useRef*** stores the value of the previous scroll position (Y-axis).
+* ***useEffect*** runs everytime when the scroll direction changes.
+
+***scrollDirection*** is the state that tracks the current scroll direction (up or down).
+
+**prevScrollY** using the previous value as a reference to compare against the current scroll position using ***window.scrollY***, a property in the Js DOM.
+
+##### handleScroll Function
+* As mentioned earlier, this function takes in the value of the current scroll position and compared it against the previous scroll position.
+
+* If the value of the current scroll is bigger, it means that the webpage is being scrolled down. 
+
+* The final scroll position, regardless of the direction (up or down) will then be stored.
+
+* The whole process repeats itself when user began scrolling again.
+
+##### useEffect & Event Listner 
+
+* The first ***useEffect*** adds an ***Event Listner*** to the scroll event. 
+
+* This means, the ***handleScroll*** function will be called when user scrolls.
+
+* The second ***useEffect*** runs when the ***scrollDirection*** changes. The ***headerRef.current.style.transform*** directly manipulate the CSS style, hiding/revealing the header.
+
+---
+
+#### How it works?
+
+* The ***handleScroll*** function is triggered everytime a user scrolls. It compares the value of ***prevScrollY*** against ***currentScrollY*** to determine the direction of the scroll (up or down).
+
+* The ***scrollDirection*** state is updated to either "up or "down" depending on where the user scrolls.
+
+* When the ***scrollDirection*** changes, updating the ***headerRef*** and manipulate the CSS, hiding the header by 200px when scrolling down, and revealing it when scrolling upwards.
+
+---
+
+## LandingSection Component
+This section renders the greeting and bio-info of the person on the webpage.
+
+* Three variables declared are ***greeting***, ***bio1*** & ***bio2***.
+
+* Next, we passed those variables through JSX to render the data.
+
+```
+<h1>{greeting}</h1>    
+<p style={{ fontSize: "45px" }}>{bio1}</p>
+<p style={{ fontSize: "45px" }}>{bio2}</p>
+```
+
+---
+
+## Featured Projects
+This section of the webpage consists of multiple components working together.
+
+* ProjectsSection
+* Cards
+* FullScreenSection
+
+The ***ProjectsSection*** is the parent to both the child; ***FullScreenSection*** & ***Cards***
+
+## ProjectsSection Component
+It consists of an array of objects storing all the projects on this webpage.
+* The ***projects*** array stores all the projects as an object.
+
+* Data in the ***projects*** array pass down to its child, ***Cards*** through props using map function and dot notation to access the value in the object. 
+
+* Next, we set the CSS layout of this section by passing of props to its child, ***FullScreenSection***.
+> The Cards Component also play a part in the CSS styling. We will come to that later.
+
+## Cards Component
+* Received the props that were passed down from its parent component, ***ProjectsSection***.
+
+* Rendered the props using the ***Box***, ***Image***, ***Heading***, and ***Text*** components from ***chakra-ui/react*** to better manage the layout and styles.
+
+## FullScreenSection Component
+* Manage the height & width of each section using the ***VStack*** components from ***chakra-ui/react***.
+
+
+## ContactMeSection Component
+
+* Using ***useFormik*** & ***yup*** for validating the form inputs.
+
+* ***Chakra-ui/react*** for styling the UI layout of form, input, buttons 
+
+* Using of custom hooks like the ***useSubmit*** & ***useAlertContext*** for handling the form submission and displaying the alert-box.
+
+---
+
+## Media
+
+* chakra-ui 
+<br />https://www.npmjs.com/package/@chakra-ui/react
+
+* Fontawesome
+<br />https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons
+
+* yup
+<br />https://www.npmjs.com/package/yup
+
+* formik
+https://www.npmjs.com/package/formik
+
+* Map function
+<br />https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
