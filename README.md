@@ -28,7 +28,7 @@ This component is responsible for:
 * The **icons (emails, github, linkedin, medium & stackoverflow)** on the top panel
   of the webpage.
 
-* The **Projects** and **Contact Me** Url
+* The Urls (**Projects** and **Contact Me**)
 
 * Hiding or Revealing the header when scrolling down or up.
 
