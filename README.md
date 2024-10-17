@@ -21,6 +21,7 @@ In any programming languages, data structures and algorithms are fundamental con
 
 * A function to execute for each element in the array. Its return value is a copied version of the original version. Any chages to this copied will not affect the origin.
 
+---
 
 ## Header Component
 This component is responsible for:
@@ -33,7 +34,6 @@ This component is responsible for:
 * Hiding or Revealing the header when scrolling down or up.
 
 * Providing the scrolling movements to the **Projects** or **Contact Me** section when clicked.
-<br />
 
 ## The Icons
 First, We declare an array of objects to store the icons & urls.
@@ -86,9 +86,9 @@ By using the **Map** function, we can easily retrieve the data again.
 In the console log, this is how the data are stored:
 <insert image>
 
-The data can then be retrieve easily using the dot notation. Eg; ***social.url*** & ***social.icon***
+> The data can then be retrieve easily using the dot notation. Eg; ***social.url*** & ***social.icon***
 
-The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
+> The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
 ---
 
@@ -115,17 +115,15 @@ const handleClick = (anchor) => () => {
   };
   ```
 
-The ***handleClick*** function takes in a anonymous function and a parameter name ***anchor*** which serve as an identifier later when searching for the corresponding sections. 
+* The ***handleClick*** function takes in a anonymous function and a parameter name ***anchor*** which serve as an identifier later when searching for the corresponding sections. 
 
-The **element** variables checks if the id exist using the **document.getElementById(id)** method to interact with the DOM. The id will be stored it it exists, else it will be null.
+* The **element** variables checks if the id exist using the **document.getElementById(id)** method to interact with the DOM. The id will be stored it it exists, else it will be null.
 
-The **offset** variable adjust the pixels of 100 for precision so that the corresponding section can be reached.
-
-The **if (element)** condition will be execute if the id exisits. Meaning, when someone clicks the url. The members inside will provide the scrolling motion to the corresponding section of the webpage.
+* The **if (element)** condition will be execute if the id exisits. Meaning, when someone clicks the url. The members inside will provide the scrolling motion to the corresponding section of the webpage.
 
 ---
 
-Rendering of the ***Projects*** & ***Contact Me*** urls are below.
+Rendering the ***Projects*** & ***Contact Me*** urls are below.
 ```
 <nav>
   <HStack spacing="24px">
@@ -149,7 +147,7 @@ Rendering of the ***Projects*** & ***Contact Me*** urls are below.
 </nav>
 ```
 
-Here, we passed in the String argument **projects** or **contactme** to the ***handleClick function*** which controls the ***onClick evenHandler***. The String will be passed to the **anchor** parameter as mentioned previously.
+Pass the String argument **"projects"** or **"contactme"** to the ***handleClick function*** which controls the ***onClick evenHandler***. The String will be passed to the **anchor** parameter as mentioned previously.
 
 ---
 
@@ -200,6 +198,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 
 **prevScrollY** using the previous value as a reference to compare against the current scroll position using ***window.scrollY***, a property in the Js DOM.
 
+
 ### handleScroll Function
 * As mentioned earlier, this function takes in the value of the current scroll position and compared it against the previous scroll position.
 
@@ -208,6 +207,7 @@ This portion of the code handles the hiding/revealing of the header panel on the
 * The final scroll position, regardless of the direction (up or down) will then be stored.
 
 * The whole process repeats itself when user began scrolling again.
+
 
 ### useEffect & Event Listner 
 
