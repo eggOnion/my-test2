@@ -21,7 +21,6 @@ In any programming languages, data structures and algorithms are fundamental con
 
 * A function to execute for each element in the array. Its return value is a copied version of the original version. Any chages to this copied will not affect the origin.
 
----
 
 ## Header Component
 This component is responsible for:
@@ -84,11 +83,10 @@ By using the **Map** function, we can easily retrieve the data using the dot not
 </nav>
 ```
 This is how the data are stored:
-<insert image>
+//<insert image>
 
 > The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
----
 
 ## The Urls
 
@@ -119,7 +117,6 @@ const handleClick = (anchor) => () => {
 
 * The **if (element)** condition will be execute if the id exisits. Meaning, when someone clicks the url. The members inside will provide the scrolling motion to the corresponding section of the webpage.
 
----
 
 Rendering the ***Projects*** & ***Contact Me*** urls are below.
 ```
@@ -147,7 +144,6 @@ Rendering the ***Projects*** & ***Contact Me*** urls are below.
 
 Pass the String argument **"projects"** or **"contactme"** to the ***handleClick function*** which controls the ***onClick evenHandler***. The String will be passed to the **anchor** parameter as mentioned previously.
 
----
 
 ## Hiding & Revealing the Header when scrolling up or down
 This portion of the code handles the hiding/revealing of the header panel on the webpage. 
