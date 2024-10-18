@@ -8,7 +8,7 @@ This project was built for my Coursera's assignment - React Advance with Meta. H
 ## The collective tools used in this project:
 
 - JavaScript map function
-- useRef, useEffct, useState & useContext hooks
+- useRef, useEffect, useState & useContext hooks
 - Custom hooks - useSubmit
 - chakra-ui/react package
 - formik package
@@ -83,8 +83,8 @@ By using the **Map** function, we can easily retrieve the data using the dot not
     </HStack>
 </nav>
 ```
-This is how the data are stored:
-//<insert image>
+<br />This is how the data are stored:
+
 
 > The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
