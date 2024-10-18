@@ -290,13 +290,12 @@ It consists of an array of objects storing all the projects on this webpage.
 * The ***isLoading*** is used to disable the form or button while the submission is in progress.
 
 <br />
-> Successful submission upon fulfilling all the requirements
+Successful submission upon fulfilling all the requirements
 ![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/formSuccess.png?raw=true)
 
 <br />
-
 Failure submission due to the intentional function from the component - **useSubmit** (custom hook) 
-![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/header_obj.png?raw=true)
+![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/formError.png?raw=true)
 
 ---
 
