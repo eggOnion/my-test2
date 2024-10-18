@@ -289,17 +289,20 @@ It consists of an array of objects storing all the projects on this webpage.
 
 ## Media
 
+* Map function
+<br />https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+
+* React Hooks
+<br />https://react.dev/reference/react/hooks
+
 * chakra-ui 
 <br />https://www.npmjs.com/package/@chakra-ui/react
-
-* Fontawesome
-<br />https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons
-
-* yup
-<br />https://www.npmjs.com/package/yup
 
 * formik
 <br />https://www.npmjs.com/package/formik
 
-* Map function
-<br />https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/map
+* yup
+<br />https://www.npmjs.com/package/yup
+
+* Fontawesome
+<br />https://www.npmjs.com/package/@fortawesome/free-brands-svg-icons
