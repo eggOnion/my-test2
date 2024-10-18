@@ -2,17 +2,17 @@
 
 This project was built for my Coursera's assignment - React Advance with Meta. Here are some of my learnings, as well as the scope of this project.
 <br />
-\*\*{Update new Url}
 
 ---
 
-## The "things" used in the project:
+## The collective tools used in this project:
 
 - JavaScript map function
 - useRef, useEffct, useState, useContext hooks
 - Custom hooks - useSubmit
 - chakra-ui/react package
-- FontAwesome
+- yup package
+- FontAwesome package
 
 ## JavaScript Map Function
 In any programming languages, data structures and algorithms are fundamental concepts used to store, organize, and manipulate data efficiently.
@@ -145,7 +145,7 @@ Rendering the ***Projects*** & ***Contact Me*** urls are below.
 Pass the String argument **"projects"** or **"contactme"** to the ***handleClick function*** which controls the ***onClick evenHandler***. The String will be passed to the **anchor** parameter as mentioned previously.
 
 
-## Hiding & Revealing the Header when scrolling up or down
+## Hiding & Revealing the Header when scrolling down or up
 This portion of the code handles the hiding/revealing of the header panel on the webpage. 
 
 ```
@@ -268,11 +268,22 @@ It consists of an array of objects storing all the projects on this webpage.
 
 ## ContactMeSection Component
 
-* Using ***useFormik*** & ***yup*** for validating the form inputs.
+* Performing the validation on the form inputs using ***useFormik*** & ***yup*** package.
 
-* ***Chakra-ui/react*** for styling the UI layout of form, input, buttons 
+* Using the ***Chakra-ui/react*** package for styling the UI layout of the forms, inputs & button. 
 
 * Using of custom hooks like the ***useSubmit*** & ***useAlertContext*** for handling the form submission and displaying the alert-box.
+
+
+## The Custom Hook - useSubmit
+
+* This custom built hook performs a simulation of an API calls when a form is submitted with an avg wait time of 2 seconds.  
+
+* It is set with a passing rate of 50% using the ***Math.random*** method.
+
+* Based on the success or failure rate, a corresponding message will be set in the ***response*** state using ***setResponse***
+
+* The ***isLoading*** is used to disable the form or button while the submission is in progress.
 
 ---
 
