@@ -8,10 +8,10 @@ This project was built for my Coursera's assignment - React Advance with Meta. H
 ## The collective tools used in this project:
 
 - JavaScript map function
-- useRef, useEffct, useState, useContext hooks
+- useRef, useEffct, useState & useContext hooks
 - Custom hooks - useSubmit
 - chakra-ui/react package
-- formik
+- formik package
 - yup package
 - FontAwesome package
 
