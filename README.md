@@ -11,6 +11,7 @@ This project was built for my Coursera's assignment - React Advance with Meta. H
 - useRef, useEffct, useState, useContext hooks
 - Custom hooks - useSubmit
 - chakra-ui/react package
+- formik
 - yup package
 - FontAwesome package
 
