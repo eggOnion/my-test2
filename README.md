@@ -84,7 +84,7 @@ By using the **Map** function, we can easily retrieve the data using the dot not
 </nav>
 ```
 <br />This is how the data are stored:
-
+![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/header_obj.png?raw=true)
 
 > The images of the icon is from **_fortawesome/free-brands-svg-icons_** package.
 
@@ -275,6 +275,9 @@ It consists of an array of objects storing all the projects on this webpage.
 
 * Using of custom hooks like the ***useSubmit*** & ***useAlertContext*** for handling the form submission and displaying the alert-box.
 
+<br />The validation of the input field
+![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/contactMe.png?raw=true)
+
 
 ## The Custom Hook - useSubmit
 
@@ -285,6 +288,15 @@ It consists of an array of objects storing all the projects on this webpage.
 * Based on the success or failure rate, a corresponding message will be set in the ***response*** state using ***setResponse***
 
 * The ***isLoading*** is used to disable the form or button while the submission is in progress.
+
+<br />
+> Successful submission upon fulfilling all the requirements
+![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/formSuccess.png?raw=true)
+
+<br />
+
+Failure submission due to the intentional function from the component - **useSubmit** (custom hook) 
+![socials_array_object](https://github.com/eggOnion/myPortfolio/blob/main/imgs/header_obj.png?raw=true)
 
 ---
 
